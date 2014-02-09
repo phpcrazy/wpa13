@@ -1,5 +1,15 @@
 <?php 
+if(isset($_GET['page'])) {
+	$page = $_GET['page'];
+} else {
+	$page = 'home';
+}
+
 ob_start();
-require "views/blog.php";
+if($page == 'home') {
+	require "views/home.php";
+} elseif ($page == 'blog') {
+	require "views/blog.php";
+}
 ob_end_flush();
  ?>
