@@ -2,3 +2,10 @@ body {
    background-image: url(../img/pw_maze_black.png);
    color: #e3e3e3;
 }
+.footer {
+   color: #fff;
+   background-color: #222222;
+   text-align: center;
+   padding: 20px 0px;
+   margin-top: 20px;
+}
