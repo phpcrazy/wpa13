@@ -3,8 +3,8 @@
 <head>
    <meta charset="UTF-8">
    <title>Application</title>
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-   <link rel="stylesheet" href="css/style.css">
+   <?php echo load_css('css/bootstrap.min'); ?>
+   <?php echo load_css('css/style'); ?>
 </head>
 <body>
    <div class="navbar navbar-default navbar-static-top">

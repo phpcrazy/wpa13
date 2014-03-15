@@ -1,12 +1,11 @@
-<?php require DD . '/app/views/layout/header.php'; ?>
-
+<?php load_view('layout/header'); ?>
    <div class="container">
       <div class="row">
          <div class="col-md-12">
             <h1 class="text-center">About Us</h1>
          </div>
          <div class="col-md-4 col-sm-4">
-            <img src="img/aim_high.jpg" class="img-responsive img-thumbnail" alt="">
+            <img src="<?php echo base_url(); ?>img/aim_high.jpg" class="img-responsive img-thumbnail" alt="">
          </div>
          <div class="col-md-8 col-sm-8">
             <table class="table">
@@ -24,27 +23,19 @@
                   <h4>Others</h4>
                </div>
                <div class="col-md-3 col-sm-6">
-                  <img src="img/aim_high.jpg" class="img-responsive img-thumbnail portfolio" alt="">
+                  <img src="<?php echo base_url(); ?>img/aim_high.jpg" class="img-responsive img-thumbnail portfolio" alt="">
                </div>
                <div class="col-md-3 col-sm-6">
-                  <img src="img/aim_high.jpg" class="img-responsive img-thumbnail portfolio" alt="">
+                  <img src="<?php echo base_url(); ?>img/aim_high.jpg" class="img-responsive img-thumbnail portfolio" alt="">
                </div>
                <div class="col-md-3 col-sm-6">
-                  <img src="img/aim_high.jpg" class="img-responsive img-thumbnail portfolio" alt="">
+                  <img src="<?php echo base_url(); ?>img/aim_high.jpg" class="img-responsive img-thumbnail portfolio" alt="">
                </div>
                <div class="col-md-3 col-sm-6">
-                  <img src="img/aim_high.jpg" class="img-responsive img-thumbnail portfolio" alt="">
+                  <img src="<?php echo base_url(); ?>img/aim_high.jpg" class="img-responsive img-thumbnail portfolio" alt="">
                </div>
             </div>
          </div>
       </div>
    </div>
-
-   <footer class="footer">
-      <span>Copyright &copy; WPA13</span>
-   </footer>
-   
-   <script src="js/jquery-2.1.0.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+<?php load_view('layout/footer'); ?>

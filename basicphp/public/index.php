@@ -1,25 +1,64 @@
 <?php 
 
 define('DD', __DIR__ . '/../');
+
+require DD . '/src/loader/ConfigLoader.php';
+require DD . '/src/loader/ViewLoader.php';
+require DD . '/app/controller/MainController.php';
+
 $request_uri = $_SERVER['REQUEST_URI'];
 $script_name = $_SERVER['SCRIPT_NAME'];
+
 
 $request_uri = explode('/', $request_uri);
 $script_name = explode('/', $script_name);
 
 $page_array = array_diff($request_uri, $script_name); // substract the uri request value
+
 $page_array = array_values($page_array); // rearrange the key
 
 if(empty($page_array)) {
-	ob_start();
-	http_response_code('200');
-	require DD . "/app/views/home.php";
-	ob_end_flush();
+	if($_SERVER['REQUEST_METHOD'] == 'POST') {
+		$input_text = $_POST['input-text'];
+		$option = $_POST['optionsRadios'];
+		switch($option) {
+			case "option1":
+				$code = "&lt;?php <br>echo strlen(\$text);<br>?&gt;";
+				$data = array(
+					'result' => count_number($input_text),
+					'code'	=> $code,
+					'description'	=> 'This function is to determine the length of string'
+					);
+				load_view('home', $data);
+				break;
+			case "option2":
+				$code = "&lt;?php <br>\$buffer = explode('', \$text);<br>return count(\$buffer);<br>?&gt;";
+				$data = array(
+					'result' => count_word($input_text),
+					'code'	=> $code,
+					'description' => 'This program shows how to count word in string'
+					);
+				load_view('home', $data);
+				break;
+		}
+	} else {
+		$data = array(
+			'result' => '',
+			'code'	=> '',
+			'description' => ''
+			);
+		load_view('home', $data);
+	}
 } else {
 	if($page_array[0] == 'about') {
 		ob_start();
 		http_response_code('200');
-		require DD . "/app/views/about.php";
+		load_view('about');
+		ob_end_flush();
+	} elseif ($page_array[0] == 'contact') {
+		ob_start();
+		http_response_code('200');
+		load_view('contact');
 		ob_end_flush();
 	} else {
 		http_response_code('404');
@@ -27,3 +66,4 @@ if(empty($page_array)) {
 	}
 }
 ?>
+
