@@ -7,6 +7,8 @@
          <div class="col-md-6">
             <form role="form" method="POST" action="http://wpa13.local/">
                <input type="text" name="input-text" class="form-control input-lg" placeholder="Enter String To Test">
+               <br>
+               <input type="text" name="another-text" class="form-control input-lg" placeholder="text">
                <div class="radio">
                   <label>
                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
