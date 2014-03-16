@@ -2,7 +2,7 @@
 
 function load_view($view, $data = null) {
 		ob_start();
-		http_response_code('200');
+		http_response_code(200);
 		if($data != null) {
 			extract($data);
 		}
