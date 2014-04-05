@@ -4,6 +4,10 @@ define('DD', __DIR__ . '/../');
 require DD . "/vendor/autoload.php";
 
 
-View::make('index');
+$data = array(
+	'site_title'	=> Lang::get('application.site_title')
+	);
+
+View::make('index', $data);
 
  ?>

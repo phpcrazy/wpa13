@@ -1,3 +1,6 @@
+<?php 
+echo $site_title;
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Config' => $baseDir . '/src/wpa13/loaders/ConfigLoader.php',
+    'Lang' => $baseDir . '/src/wpa13/loaders/LangLoader.php',
     'View' => $baseDir . '/src/wpa13/loaders/ViewLoader.php',
 );
