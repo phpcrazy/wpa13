@@ -1,0 +1,19 @@
+
+  .search-panel{
+  	padding:0px !important;
+    background-color:#faf1be !important;
+    border:solid 1px #cac9c9;
+    padding: 30px !important; 
+    margin-bottom: 30px;
+
+    /*height:100px;
+    line-height: 100px !important;
+    padding-left: 30px;*/
+  }
+  .rounded-corners {
+          behavior: url(/css/border-radius.htc);
+          border-radius: 10px;
+  }
+  .col-lg-3{
+  	padding-top: 35px;
+  }

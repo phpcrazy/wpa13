@@ -1,0 +1,10 @@
+{
+	"autoload": {
+		"classmap": [
+			"src/wpa13/loaders"
+		],
+		"files": [
+			"src/wpa13/helpers.php"
+		]
+	}
+}

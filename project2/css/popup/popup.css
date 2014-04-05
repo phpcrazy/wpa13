@@ -1,0 +1,10 @@
+
+/*for popup about*/
+.block{
+	display: none;
+} 
+.title{	
+	font-weight: bold;	
+	text-transform: uppercase;
+	margin-top: 5px;
+}

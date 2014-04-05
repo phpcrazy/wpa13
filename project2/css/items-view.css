@@ -1,0 +1,84 @@
+
+.schide-item {
+	width: 100%;
+	height: 80%;
+	overflow: hidden;	
+	float: left;
+}
+.pleft-ctn-item {
+    width: 100%;
+    height: 90%;
+    overflow: auto;    
+    padding-right: 4%;
+
+}
+
+/*filter-view*/
+
+.paging{
+	margin-bottom: 5px;
+	text-align: right;
+}
+#content{
+	padding:0 !important;
+	margin:0 !important;
+}
+#filter,
+#items{
+	float: left;
+	padding:0;
+	margin:0;
+}
+
+/*filter*/
+
+#filter p.title{
+	color: #363639;
+	text-transform: uppercase;
+}
+#filter{
+	color: #8d8d8d;
+	width: 20%;
+}
+
+#filter ul li{
+	background: url(../images/bullet.png) no-repeat left ;
+	padding-left: 14px;
+
+	height: 20px;
+	line-height: 15px;
+}
+#filter ul li a{
+	text-decoration: none;
+}
+#filter ul li a:hover{
+	text-decoration: underline;
+}
+/*items*/
+#items{
+	width: 80%;
+}
+.item-box{
+	width:225px;	
+	color: #333;
+
+	margin: 0 10px 10px 10px;
+	float: left;
+	border-bottom: solid #666 1px;
+
+	padding-bottom: 20px;
+
+}
+.item-box p{
+	text-align: left;
+}
+
+.black{
+	color: #000;
+}
+.big{
+	font-size: 18px;
+}
+.bold{
+	font-weight: bold;	
+}

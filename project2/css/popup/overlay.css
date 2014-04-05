@@ -1,0 +1,123 @@
+
+/*
+
+	This stylesheet has the generic styles inherited by the overlay accross all pages
+	Refer to the pages' stylesheets for local styles
+
+*/
+
+/********************************************************************************************************
+ *
+ *	GENERIC
+ *
+ *
+ *
+ */
+
+body{
+	/* 
+		Set body position to relative to insure fallback covers the whole window. 
+		If body is not parent of overlay this is not required 
+	*/
+	position: relative; 
+	padding: 1px 0;
+}
+
+
+/********************************************************************************************************
+ *
+ *	FALLBACK
+ *
+ *
+ *
+ */
+  
+#fallback{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	background: transparent url("../images/fallback.png");
+	background: rgba(0,0,0,0.5);
+	
+	
+	
+	display: none;
+	opacity: 0;
+	
+} 
+
+
+
+
+/********************************************************************************************************
+ *
+ *	OVERLAY
+ *
+ *
+ *
+ */
+ 
+ 
+#overlay{
+	position: absolute;
+	top: 50px; /* Set a smaller to insure the default position is closer to the top of the window */
+	left: 50%; /* Percentage to rely on browser for horizontal positioning */
+
+	width: 600px;
+	padding: 20px;
+
+	background: white;
+	
+	-o-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	-o-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	box-shadow: 0 0 30px rgba(0,0,0,0.5);
+
+	display: none;
+	opacity: 0;
+	
+}
+ 
+ 
+/********************************************************************************************************
+ *
+ *	CLOSE BUTTON
+ *
+ *
+ *
+ */ 
+ 
+#overlay .close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+	width: 25px;
+	height: 25px;
+	
+	background: black;
+	
+	color: white;
+	text-align: center;
+	line-height: 22px;
+	text-decoration: none;
+	
+	-o-border-radius: 0 5px;
+	-webkit-border-radius: 0 5px;
+	-moz-border-radius: 0 5px;
+	border-radius: 0 5px;
+} 
+
+#overlay .close:hover{
+	background: #424242;
+}
+ 
+ 

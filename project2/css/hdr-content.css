@@ -1,0 +1,47 @@
+#clothing,
+#shoes,
+#accessories,
+#brands{
+	background: #FFF;
+	border: dotted 1px;
+	top: 28px;
+	width: auto;
+	height: auto;
+	padding: 5px;
+	position: fixed;
+	display:none;
+	z-index: 1000;
+}
+
+#clothing li,
+#shoes li,
+#accessories li,
+#brands li{
+	line-height: 20px;
+	margin: 0 10px 0 10px;
+}
+
+
+#clothing{	
+	left: 318px;	
+}
+#shoes{	
+	left: 425px;	
+}
+#accessories{	
+	left: 510px;	
+}
+#brands{	
+	left: 635px;	
+}
+
+
+#c:hover + #clothing,
+#s:hover + #shoes,
+#a:hover + #accessories,
+#b:hover + #brands{
+ 	display:block;
+}
+
+
+
