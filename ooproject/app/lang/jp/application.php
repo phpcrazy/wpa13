@@ -1,7 +1,6 @@
 <?php 
 return array(
-	'default_language'	=> 'en'
-
+	'site_title'	=> 'Japan Sar'
 	);
 
  ?>

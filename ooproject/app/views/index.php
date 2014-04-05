@@ -20,6 +20,9 @@ echo $site_title;
   </head>
 
   <body>
+    <a href="http://wpa13.local/index.php?lang=en">en</a>
+    <a href="http://wpa13.local/index.php?lang=mm">mm</a>
+    <a href="http://wpa13.local/index.php?lang=jp">jp</a>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
