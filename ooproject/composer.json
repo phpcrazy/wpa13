@@ -4,6 +4,7 @@
 			"Wpa13\\" : "src/wpa13/src/" 
 			},
 		"classmap": [
+			"app/controllers",
 			"src/wpa13/loaders"
 		],
 		"files": [

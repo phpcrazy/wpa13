@@ -3,7 +3,13 @@
 namespace Wpa13;
 
 class Application {
-	public function start() {
+	public $page_array;
+
+ 	public function __construct() {
+		// Language Loader
+		\Lang::loader();
+
+		// URI Request Handler
 		$request_uri = $_SERVER['REQUEST_URI'];
 		$script_name = $_SERVER['SCRIPT_NAME'];
 
@@ -11,33 +17,26 @@ class Application {
 		$script_name = explode('/', $script_name);
 
 		// substract the uri request value
-		$page_array = array_diff($request_uri, $script_name);
+		$this->page_array = array_diff($request_uri, $script_name);
 
 		// rearrange the key
-		$page_array = array_values($page_array); 
+		$this->page_array = array_values($this->page_array);
+	}
 
-		if(empty($page_array)) {
-			$page_array[0] = 'home';
+	public function start() {
+		if(empty($this->page_array)) {
+			$this->page_array[0] = 'home';
 		} 
 
-		// include DD . '/app/routes.php';
+		$rules = include DD . '/app/routes.php';
 
-		$rules = array(
-				'string'	=> array(
-				'controller' 	=> 'StringController@actionIndex'
-			),
-				'home'	=> array(
-				'controller' 	=> 'HomeController@actionIndex',
-			),
-		);
-
-		if(array_key_exists($page_array[0], $rules)) {
-			$route = $rules[$page_array[0]];
+		if(array_key_exists($this->page_array[0], $rules)) {
+			$route = $rules[$this->page_array[0]];
 			$controller = explode('@', $route['controller']);
 			call_user_func_array(array($controller[0], $controller[1]), array());	
 		} else {
 			http_response_code(404);
-			echo "404 Not Found!";
+			\View::make('404');
 		}
 	}
 }

@@ -4,10 +4,6 @@ define('DD', __DIR__ . '/../');
 require DD . "/vendor/autoload.php";
 
 use Wpa13\Application;
-
-// Language Loader
-Lang::loader();
-
 $app = new Application();
 $app->start();
 unset($app);

@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'BlogController' => $baseDir . '/app/controllers/BlogController.php',
     'Config' => $baseDir . '/src/wpa13/loaders/ConfigLoader.php',
+    'HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'Lang' => $baseDir . '/src/wpa13/loaders/LangLoader.php',
     'View' => $baseDir . '/src/wpa13/loaders/ViewLoader.php',
 );
