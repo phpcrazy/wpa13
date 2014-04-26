@@ -1,6 +1,13 @@
 <?php 
 
 class Lang {
+	public static function loader() {
+		if(isset($_GET['lang'])) {
+			static::writer($_GET['lang']);
+			header('Location: ' . Config::get('application.site_url'));
+		}
+	}
+
 	public static function get($lang) {
 		$e_lang = explode('.', $lang);
 		$default_language = Config::get('application.default_language');

@@ -3,15 +3,13 @@
 define('DD', __DIR__ . '/../');
 require DD . "/vendor/autoload.php";
 
-if(isset($_GET['lang'])) {
-	Lang::writer($_GET['lang']);
-	header('Location: ' . "http://wpa13.local/");
-}
+use Wpa13\Application;
 
-$data = array(
-	'site_title'	=> Lang::get('application.site_title')
-	);
+// Language Loader
+Lang::loader();
 
-View::make('index', $data);
+$app = new Application();
+$app->start();
+unset($app);
 
  ?>

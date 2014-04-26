@@ -1,5 +1,8 @@
 {
 	"autoload": {
+		"psr-0": {
+			"Wpa13\\" : "src/wpa13/src/" 
+			},
 		"classmap": [
 			"src/wpa13/loaders"
 		],
