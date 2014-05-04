@@ -5,7 +5,7 @@ require DD . "/vendor/autoload.php";
 
 use Wpa13\Application;
 $app = new Application();
-$app->start();
+$app->load();
 unset($app);
 
  ?>

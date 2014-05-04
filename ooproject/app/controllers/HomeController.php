@@ -5,7 +5,7 @@ class HomeController {
 		echo "Hello from Constructor!";
 	}
 
-	public static function actionIndex() {
+	public function actionIndex() {
 		View::make('index');
 	}
 

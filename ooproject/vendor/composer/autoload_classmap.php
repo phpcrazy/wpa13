@@ -10,5 +10,6 @@ return array(
     'Config' => $baseDir . '/src/wpa13/loaders/ConfigLoader.php',
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'Lang' => $baseDir . '/src/wpa13/loaders/LangLoader.php',
+    'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'View' => $baseDir . '/src/wpa13/loaders/ViewLoader.php',
 );
