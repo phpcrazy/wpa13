@@ -4,6 +4,8 @@ namespace Wpa13;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use Symfony\Component\HttpKernel\Controller\ControllerResolver;
+
 use Symfony\Component\Routing;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
@@ -15,6 +17,7 @@ class Application {
 	public $path_info;
 	public $page_array;
 	public $routes;
+	public $resolver;
 
  	public function __construct() {
 		// Language Loader
@@ -23,6 +26,7 @@ class Application {
 		$this->request = Request::createFromGlobals();
 		$this->path_info = $this->request->getPathInfo();
 		$this->context = new RequestContext();
+		$this->resolver = new ControllerResolver();
 		
 		// URI Request Handler
 		// $request_uri = $_SERVER['REQUEST_URI'];
@@ -49,11 +53,12 @@ class Application {
 		$matcher = new UrlMatcher($this->routes, $this->context);
 	
 		try {
-			$final_match = $matcher->match($this->path_info);
-			extract($final_match);
-			$controller = explode('::', $_controller);
-			call_user_func_array(array(new $controller[0], $controller[1]), array());
-			$response = new Response('OK!!!', 200);
+			$this->request->attributes->add($matcher->match($this->path_info)); // ******* Important *******
+			$controller = $this->resolver->getController($this->request);
+			$arguments = $this->resolver->getArguments($this->request, $controller);
+			
+			$response_content = call_user_func_array($controller, $arguments);
+			$response = new Response($response_content, 200);
 
 		} catch (Routing\Exception\ResourceNotFoundException $e) {
 			$response = new Response('Not Found', 404);

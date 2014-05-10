@@ -2,10 +2,10 @@
 
 class BlogController {
 	public function __construct() {
-		echo "Blog Constructor Run!";
+		echo "Constructor!";
 	}
-	public function actionIndex() {
-		View::make('blog');
+	public function actionIndex($id, $category_id) {
+		return View::make('blog');
 	}
 }
 

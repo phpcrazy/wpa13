@@ -7,8 +7,9 @@ class View {
 			extract($data);
 		}
 		require DD . "/app/" . Config::get('system.view_folder') . '/' . $view . ".php";
-		ob_end_flush();
+		return ob_get_clean();
 	}
+
 }
 
  ?>

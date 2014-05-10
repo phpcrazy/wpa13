@@ -16,11 +16,25 @@ $routes->add(
 
 $routes->add(
 	'blog',
-	new Route('/blog', array(
-		'_controller' => 'BlogController::actionIndex'
+	new Route(
+		'/blog/{id}/{category_id}', 
+		array(
+			'id'	=> 1,
+			'category_id' => 23,
+			'_controller' => 'BlogController::actionIndex',
 		)
 	)
 );
+
+$routes->add(
+	'page',
+	new Route(
+		'/page/{page_id}', 
+		array(
+			'_controller' => 'PageController::actionIndex'
+			)
+		)
+	);
 
 return $routes;
 

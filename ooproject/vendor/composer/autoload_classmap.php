@@ -8,8 +8,10 @@ $baseDir = dirname($vendorDir);
 return array(
     'BlogController' => $baseDir . '/app/controllers/BlogController.php',
     'Config' => $baseDir . '/src/wpa13/loaders/ConfigLoader.php',
+    'HTML' => $baseDir . '/src/wpa13/loaders/HtmlLoader.php',
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'Lang' => $baseDir . '/src/wpa13/loaders/LangLoader.php',
+    'PageController' => $baseDir . '/app/controllers/PageController.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'View' => $baseDir . '/src/wpa13/loaders/ViewLoader.php',
 );

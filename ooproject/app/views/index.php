@@ -10,6 +10,8 @@
     <title>Fashion</title>
 
     <!-- Bootstrap core CSS -->
+    {{ HTML::style('css/bootstrap') }}
+    <?php echo HTML::style('css/bootstrap'); ?>
     <link rel='stylesheet' href='css/bootstrap.css'>
 	
     <!-- Custom styles for this template -->

@@ -6,11 +6,11 @@ class HomeController {
 	}
 
 	public function actionIndex() {
-		View::make('index');
+		return View::make('index');
 	}
 
 	public static function blog() {
-		echo "Hello from Blog!";
+		return "Hello from Blog!";
 	}
 }
 
