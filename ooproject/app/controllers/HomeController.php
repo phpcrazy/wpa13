@@ -2,7 +2,7 @@
 
 class HomeController {
 	public function __construct() {
-		echo "Hello from Constructor!";
+		
 	}
 
 	public function actionIndex() {

@@ -29,7 +29,7 @@ $routes->add(
 $routes->add(
 	'page',
 	new Route(
-		'/page/{page_id}', 
+		'/page', 
 		array(
 			'_controller' => 'PageController::actionIndex'
 			)

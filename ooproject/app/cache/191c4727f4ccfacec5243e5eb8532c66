@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><?php echo $title; ?></title>
+	<?php echo HTML::style('css/bootstrap'); ?>
+</head>
+<body>
+	<?php echo $another_title; ?>
+</body>
+</html>
