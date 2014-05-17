@@ -6,10 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AdminController' => $baseDir . '/app/controllers/AdminController.php',
     'BlogController' => $baseDir . '/app/controllers/BlogController.php',
+    'CategoryController' => $baseDir . '/app/controllers/CategoryController.php',
     'Config' => $baseDir . '/src/wpa13/loaders/ConfigLoader.php',
     'HTML' => $baseDir . '/src/wpa13/loaders/HtmlLoader.php',
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
+    'ItemController' => $baseDir . '/app/controllers/ItemController.php',
     'Lang' => $baseDir . '/src/wpa13/loaders/LangLoader.php',
     'PageController' => $baseDir . '/app/controllers/PageController.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',

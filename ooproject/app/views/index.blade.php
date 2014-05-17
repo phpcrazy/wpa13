@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+{{ Lang::get('application.site_title') }}
 <div class="row">
   <div class="col-md-12">
     <div id="home-slider" class="carousel slide" data-ride="carousel">

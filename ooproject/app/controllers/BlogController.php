@@ -5,7 +5,9 @@ class BlogController {
 		echo "Constructor!";
 	}
 	public function actionIndex($id, $category_id) {
+	
 		return View::make('blog');
+
 	}
 }
 

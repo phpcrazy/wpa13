@@ -34,6 +34,64 @@ $routes->add(
 			'_controller' => 'PageController::actionIndex'
 			)
 		)
+);
+$routes->add(
+	'login',
+	new Route(
+		'/login', 
+		array(
+			'id'=> 1,
+			'_controller' => 'AdminController::actionIndex'
+			)
+		)
+);
+$routes-> add(
+	'adminnewreg',
+	new Route(
+		'/adminnewreg',
+		array(
+			'_controller' => 'AdminController::actionNewReg'
+			)
+		)
+	);
+
+$routes->add(
+	'item',
+	new Route(
+		'/admin/item', 
+		array(
+			'_controller' => 'ItemController::actionIndex'
+			)
+		)
+
+);
+$routes-> add(
+	'itemnew',
+	new Route(
+		'/admin/itemnew',
+		array(
+			'_controller' => 'ItemController::actionItemNew'
+			)
+		)
+	);
+$routes->add(
+	'category',
+	new Route(
+		'/admin/category', 
+		array(
+			'_controller' => 'CategoryController::actionIndex'
+			)
+		)
+
+);
+$routes-> add(
+	'categorynew',
+	new Route(
+		'/admin/categorynew',
+		array(
+			'_controller' => 'CategoryController::actionCategoryNew'
+			)
+		)
 	);
 
 return $routes;

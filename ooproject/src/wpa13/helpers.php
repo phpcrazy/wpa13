@@ -7,4 +7,8 @@ function dump($value, $dump = false) {
 	}
 }
 
+function base_url() {
+	return Config::get('application.site_url');
+}
+
  ?>
