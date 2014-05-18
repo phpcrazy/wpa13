@@ -4,7 +4,8 @@
 			"symfony/http-kernel": "2.5.*@dev",
 			"symfony/routing": "2.4.*@dev",
 			"twig/twig": "1.15.*@dev",
-			"philo/laravel-blade": "dev-master"
+			"philo/laravel-blade": "dev-master",
+			"illuminate/database": "4.1.*@dev"
 		},
 	"autoload": {
 		"psr-0": {

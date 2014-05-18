@@ -12,7 +12,7 @@ $routes->add(
 		'_controller' => 'HomeController::actionIndex'
 		)
 	)
-);
+	);
 
 $routes->add(
 	'blog',
@@ -22,9 +22,9 @@ $routes->add(
 			'id'	=> 1,
 			'category_id' => 23,
 			'_controller' => 'BlogController::actionIndex',
+			)
 		)
-	)
-);
+	);
 
 $routes->add(
 	'page',
@@ -34,7 +34,7 @@ $routes->add(
 			'_controller' => 'PageController::actionIndex'
 			)
 		)
-);
+	);
 $routes->add(
 	'login',
 	new Route(
@@ -44,7 +44,7 @@ $routes->add(
 			'_controller' => 'AdminController::actionIndex'
 			)
 		)
-);
+	);
 $routes-> add(
 	'adminnewreg',
 	new Route(
@@ -64,7 +64,7 @@ $routes->add(
 			)
 		)
 
-);
+	);
 $routes-> add(
 	'itemnew',
 	new Route(
@@ -83,7 +83,7 @@ $routes->add(
 			)
 		)
 
-);
+	);
 $routes-> add(
 	'categorynew',
 	new Route(
@@ -93,6 +93,27 @@ $routes-> add(
 			)
 		)
 	);
+
+$routes->add(
+	'sale',
+	new Route(
+		'/sale', 
+		array(
+			'_controller' => 'SaleController::actionIndex'
+			)
+		)
+	);
+
+$routes->add(
+	'detail',
+	new Route(
+		'/detail', 
+		array(
+			'_controller' => 'DetailController::actionIndex'
+			)
+		)
+	);
+
 
 return $routes;
 
