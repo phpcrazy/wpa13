@@ -13,5 +13,13 @@ class HomeController {
 		return "Hello from Blog!";
 	}
 }
+/*
+product
+user
+sales
+order
+
+mmlinks45a1cBE2*V
+*/
 
  ?>

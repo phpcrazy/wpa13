@@ -114,6 +114,26 @@ $routes->add(
 		)
 	);
 
+$routes->add(
+	'data',
+	new Route(
+		'/data',
+		array(
+			'_controller' => 'DataController::actionIndex'
+			)
+		)
+	);
+
+$routes->add(
+	'dbtest',
+	new Route(
+		'/dbtest',
+		array(
+			'_controller'	=> 'DbtestController::actionIndex'
+			)
+		)
+	);
+
 
 return $routes;
 
