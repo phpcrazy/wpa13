@@ -7,6 +7,11 @@ class DB {
 	private $conn; 
 	private $table;
 
+	private $sql;
+	private $execute_array = array();
+
+	private $flag = false;
+
 	public function __construct() {
 		$hostname = Config::get('database.hostname');
 		$dbname = Config::get('database.dbname');
@@ -32,10 +37,40 @@ class DB {
 		return self::$_instance;
 	}
 
+	public function select($array_select) {
+		$this->sql = 'SELECT ';
+		foreach($array_select as $as) {
+			$this->sql .= $as . ', ';
+		}
+		$this->sql = substr($this->sql, 0, -2);
+		$this->sql .= ' FROM ' . $this->table;
+		$this->flag = true;
+		$this->execute_array = array();
+		return $this;
+	}
+
+	public function where($key, $value) {
+		$this->sql = 'SELECT * FROM ' .$this->table . ' WHERE ' . $key . ' = :' . $key;
+		$this->execute_array = array(
+			$key => $value
+			);
+		$this->flag = true;
+		return $this;
+	}
+
+	public function orWhere($array) {
+		
+		return $this;
+	}
+
 	public function get() {
-		$sql = "SELECT * FROM " . $this->table;
-		$query = $this->conn->query($sql);
-		return $query->fetch(PDO::FETCH_ASSOC);
+		if($this->flag == false) {
+			$this->sql = 'SELECT * FROM ' . $this->table;	
+		}
+		dump($this->sql);
+		$stmt = $this->conn->prepare($this->sql);
+		$stmt->execute($this->execute_array); 
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 		
 /*
