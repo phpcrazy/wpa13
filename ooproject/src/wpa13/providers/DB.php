@@ -58,16 +58,43 @@ class DB {
 		return $this;
 	}
 
-	public function orWhere($array) {
-		
+	public function orWhere($key, $value) {
+		$this->sql .= ' OR ' . $key .  ' = :' . $key . '2';
+
+		$second_array = array(
+			$key . 2 => $value
+			);
+
+		$this->execute_array = $this->arrayCombine($this->execute_array, $second_array);
 		return $this;
 	}
+
+	public function andWhere($key, $value) {
+		$this->sql .= ' AND ' . $key . ' = :' . $key . '2';
+		$second_array = array(
+			$key . 2 => $value
+			);
+
+		$this->execute_array = $this->arrayCombine($this->execute_array, $second_array);
+		return $this;
+	}
+
+	private function arrayCombine($first_array, $second_array) {
+		$first_array = serialize($first_array);
+		$second_array = serialize($second_array);
+		$second_count = strlen($second_array);
+		$second_array = substr($second_array, 5, $second_count);
+		$first_array = str_replace('a:1', 'a:2', $first_array);
+		$first_array = substr($first_array, 0, -1);
+		$final_array = $first_array . $second_array;
+		return unserialize($final_array);
+	}
+
 
 	public function get() {
 		if($this->flag == false) {
 			$this->sql = 'SELECT * FROM ' . $this->table;	
 		}
-		dump($this->sql);
 		$stmt = $this->conn->prepare($this->sql);
 		$stmt->execute($this->execute_array); 
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
